@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping({"/api/v1.0"})
 @RequiredArgsConstructor
 public class postKafka {
-        private final KafkaConfig kafkaConfig;
-        private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaConfig kafkaConfig;
+    private final KafkaTemplate<String, String> kafkaTemplate;
 
-        @PostMapping(value = "/postTask")
-        public void postMessage(@RequestBody String message) {
-                kafkaTemplate.send("post_task", message);
-        }
+    @PostMapping(value = "/postTask")
+    public void postMessage(@RequestBody String message) {
+        kafkaTemplate.send("post_task", message);
+    }
 }
